@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Walkway_SemiBold;
+  src: url(../fonts/Walkway_SemiBold.woff2);
+}
+
+@font-face {
+  font-family: Walkway_Bold;
+  src: url(../fonts/Walkway_Bold.woff2);
+}
+
+  
+//Primary
+$orange: #003dff;
+$paleOrange: hsl(25, 100%, 94%);
+//Neutral
+$veryDarkBlue: #003dff;
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%); //(with 75% opacity for lightbox background)
+//font
+$font: 'Walkway_Bold', serif;

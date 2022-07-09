@@ -1,0 +1,183 @@
+.light-box {
+    img {
+        width: 100vw;
+        height: 340px;
+    }
+    .mobile-slider {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        width: 90vw;
+        padding: 0 5%;
+        top: 230px;
+        img {
+            background: $white;
+            padding: 10px;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+        }
+    }
+    .thumbnails {
+        display: none;
+    }
+    .light-box-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 450px) {
+    .light-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 7%;
+        gap: 5px;
+        img {
+            width: 60vw;
+            height: auto;
+            max-width: 450px;
+            border-radius: 15px;
+        }
+        .mobile-slider {
+            display: none;
+        }
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            img {
+                width: 12.5vw;
+                max-width: 100px;
+                height: 12.5vw;
+                cursor: pointer;
+                &:hover {
+                    filter: opacity(50%);
+                }
+                &:first-of-type {
+                    box-shadow: 0 0 0 3px $orange;
+                    filter: opacity(50%);
+                }
+            }
+        }
+        .light-box-desktop {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 100vw;
+            transform: translateX(-50%);
+            z-index: 1;
+            gap: 20px;
+            overflow: hidden;
+            &.active {
+                display: flex;
+                flex-direction: column;
+                background: hsla(0, 0, 0, 0.75);
+            }
+            img {
+                width: 350px;
+            }
+            .thumbnails {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                img {
+                    width: 65px;
+                    height: 65px;
+                }
+            }
+            span {
+                button {
+                    border: none;
+                    background: none;
+                    transform: translateX(165px);
+                    color: $white;
+                    &:hover {
+                        color: $orange;
+                        cursor: pointer;
+                    }
+                    i {
+                        font-size: 25px;
+                    }
+                }
+            }
+            .nav-btns {
+                button {
+                    border: none;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    transform: translate(-150px, -20px);
+                    cursor: pointer;
+                    &:hover {
+                        color: $orange;
+                    }
+                    i {
+                        font-size: 20px;
+                    }
+                    &:last-of-type {
+                        transform: translate(150px, -20px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .light-box {
+        display: flex;
+        flex-direction: column;
+        img {
+            width: 40vw;
+            max-width: 420px;
+            min-width: 300px;
+        }
+        .thumbnails {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            img {
+                height: 90px;
+                max-width: 90px;
+                min-width: 50px;
+                border-radius: 15px;
+            }
+        }
+        .light-box-desktop {
+            gap: 10px;
+            .light-box-image {
+                width: 100%;
+            }
+            .thumbnails {
+                justify-content: center;
+                img {
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+            span {
+                button {
+                    transform: translateX(200px);
+                }
+            }
+            .nav-btns {
+                button {
+                    transform: translate(-190px, -30px);
+                    &:last-of-type {
+                        transform: translate(190px, -30px);
+                    }
+                }
+            }
+        }
+    }
+}

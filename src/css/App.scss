@@ -1,0 +1,21 @@
+@import "_Navbar";
+@import "_Main";
+@import "_Variables";
+@import "_InfoMain";
+@import "_LightBox";
+body {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+    &.mobileNav {
+        overflow: hidden;
+        @media (min-width: 600px) {
+            overflow: scroll;
+        }
+    }
+    &.overlay {
+        overflow-x: hidden;
+    }
+}
